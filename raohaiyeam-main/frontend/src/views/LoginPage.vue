@@ -3,10 +3,18 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
-          <div class="column is-half">
+          <div class="row is-half">
             <!-- login -->
-            <div class="box">
-              <h1 class="textmain my-2">Login</h1>
+            <!-- img -->
+            <div class="loginImg">
+              <figure class="logimage">
+                <img class="image" src="@/assets/6263.jpg" alt="Login image" />
+              </figure>
+            </div>
+
+            <div class="loginData">
+              <label class="label">Welcome to the Land of Writing!</label>
+              <label class="label">Bookworms, are you ready to enter the Land of Writing?</label>
               <!-- user -->
               <div class="field">
                 <label class="label">Username</label>
@@ -27,14 +35,15 @@
                   </span>
                 </div>
               </div>
-
-              <button class="button is-primary is-fullwidth my-4">Login</button>
+              <button class="button is-primary is-fullwidth my-4">Sign In</button>
 
               <p class="text my-1">
                 Don't have an account yet?
-                <router-link to="/register"> Register</router-link>
+                <!-- ใส่ให้ลิ้งหน้าด้วย -->
+                <router-link to="/register"> Sign Up</router-link>
               </p>
             </div>
+
           </div>
         </div>
       </div>
