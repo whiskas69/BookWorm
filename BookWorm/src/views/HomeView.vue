@@ -1,9 +1,15 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
 <template>
   <main>
-    <button><router-link to="/login">Go</router-link></button>
+    <button class="text-9xl">
+      <router-link to="/login">log in</router-link>
+    </button>
+    <div>
+      <button class="text-9xl">
+        <router-link to="/register">register</router-link>
+      </button>
+    </div>
   </main>
 </template>
