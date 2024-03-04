@@ -1,6 +1,8 @@
 <template>
-  <header class="sticky top-0 bg-cranberry shadow-lg rounded-bl-full font-Comfortaa">
-    <nav class="flex flex-col items-center gap-4 pl-5 text-knitsweater py-6">
+  <header
+    class="sticky top-0 bg-cranberry shadow-lg rounded-bl-full font-Comfortaa"
+  >
+    <nav class="flex flex-col items-center gap-4 pl-5 text-knitsweater py-2">
       <!-- nav top -->
       <div class="flex flex-row w-full gap-4">
         <!-- logo -->
@@ -40,7 +42,7 @@
             type="button"
             class="text-knitsweater bg-midnight font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
           >
-            SignIn
+            <router-link to="/login"> SignIn </router-link>
           </button>
           <label class="text-knitsweater font-medium text-lg px-2 pr-4"
             >or</label
@@ -49,7 +51,7 @@
             type="button"
             class="text-knitsweater bg-midnight font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
           >
-            SignUp
+          <router-link to="/register"> SignUp </router-link>
           </button>
         </div>
       </div>
