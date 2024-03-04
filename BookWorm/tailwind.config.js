@@ -5,21 +5,27 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    colors: {
-      navbar: '#B05044'
+    extend: {
+      colors: {
+        cranberry: '#B05044',
+        knitsweater: '#F0E4D8',
+        search: '#FFF9F9',
+        camelcoat: '#B77855',
+        midnight: '#2F4842',
+        steelblue: '#86A5A8'
+      },
     },
-    borderRadius: {
-      'navbar': '60px',
-      'none': '0',
-      'sm': '0.125rem',
-      DEFAULT: '0.25rem',
-      DEFAULT: '4px',
-      'md': '0.375rem',
-      'lg': '0.5rem',
-      'full': '9999px',
-      'large': '12px',
+    fontfamily: {
+      Comfortaa: ["Comfortaa, sans-serif"]
     },
-    extend: {},
+    // container: {
+    //   padding: "2rem",
+    //   center: true
+    // },
+    screens: {
+      sm: "640px",
+      md: "768px"
+    }
   },
   plugins: [],
 }
