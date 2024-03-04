@@ -12,16 +12,17 @@ export default {
         search: '#FFF9F9',
         camelcoat: '#B77855',
         midnight: '#2F4842',
-        steelblue: '#86A5A8'
+        steelblue: '#86A5A8',
+        spiritmountain: '#68858F'
       },
     },
     fontfamily: {
-      Comfortaa: ["Comfortaa, sans-serif"]
+      Comfortaa: ["Comfortaa", "sans-serif"],
     },
-    // container: {
-    //   padding: "2rem",
-    //   center: true
-    // },
+    container: {
+      padding: "2rem",
+      center: true
+    },
     screens: {
       sm: "640px",
       md: "768px"
