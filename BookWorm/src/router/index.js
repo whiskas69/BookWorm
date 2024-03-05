@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 
+import EditProfile from '../views/EditProfile.vue'
 import History from '../views/History.vue'
 import ToUpCoin from '../views/ToUpCoin.vue'
 
@@ -36,6 +37,11 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       component: RegisterView
+    },
+    {
+      path: '/editProfile',
+      name: 'EditProfile',
+      component: EditProfile
     },
     {
       path: '/history',
