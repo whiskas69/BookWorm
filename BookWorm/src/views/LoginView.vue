@@ -2,13 +2,14 @@
   <div class="flex min-h-full flex-1 flex-col px-6 py-12 lg:px-8">
     <div class="hero-body">
       <div class="columns is-centered">
-        <div class="flex justify-between gap-x-6 py-5">
+        <div class="flex justify-center gap-x-6 py-5">
           <!-- login -->
           <!-- img -->
           <div class="flex min-w-0 gap-x-4">
             <img class="loginImg" src="@/assets/6263.jpg" alt="Login image" />
           </div>
-          <div class="loginData min-w-0 flex-auto">
+
+          <div class="loginData min-w-0 flex-2">
             <div class="mt-20">
               <label class="title">Welcome to the Land of Writing!</label>
             </div>
@@ -89,8 +90,8 @@ export default {
   text-align: center;
 }
 .loginImg {
-  height: 500px;
-  width: 800px;
+  height: 400px;
+  width: 700px;
   margin-top: 30%;
   /* margin-left: -7%; */
 }
