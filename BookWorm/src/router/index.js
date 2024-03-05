@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 
+import History from '../views/History.vue'
 import ToUpCoin from '../views/ToUpCoin.vue'
 
 const router = createRouter({
@@ -33,6 +34,11 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       component: RegisterView
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: History
     },
     {
       path: '/toupcoin',
