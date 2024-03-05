@@ -8,6 +8,8 @@ import History from '../views/History.vue'
 import ToUpCoin from '../views/ToUpCoin.vue'
 
 import Favorite from '../views/FavoriteView.vue'
+import Shelf from '../views/ShelfView.vue'
+import Writing from '../views/WritingView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,9 +56,19 @@ const router = createRouter({
       component: ToUpCoin
     },
     {
-      path: '/fav',
+      path: '/favorite',
       name: 'favorite',
       component: Favorite
+    },
+    {
+      path: '/shelf',
+      name: 'shelf',
+      component: Shelf
+    },
+    {
+      path: '/writing',
+      name: 'writing',
+      component: Writing
     }
 
   ]
