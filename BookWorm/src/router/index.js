@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 
+import MyProfile from '../views/MyProfile.vue'
 import EditProfile from '../views/EditProfile.vue'
 import History from '../views/History.vue'
 import ToUpCoin from '../views/ToUpCoin.vue'
@@ -20,19 +21,8 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: HomeView
-    },
-    {
       path: '/login',
       name: 'login',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: LoginView
     },
     {
@@ -44,6 +34,11 @@ const router = createRouter({
       path: '/editProfile',
       name: 'EditProfile',
       component: EditProfile
+    },
+    {
+      path: '/myprofile',
+      name: 'MyProfile',
+      component: MyProfile
     },
     {
       path: '/history',

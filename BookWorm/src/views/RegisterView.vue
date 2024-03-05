@@ -6,7 +6,7 @@
             <!-- login -->
             <!-- img -->
             <div class="flex min-w-0 gap-x-4">
-              <img class="loginImg" src="@/assets/5294.jpg" alt="Login image" />
+              <img class="loginImg bg-cover" src="@/assets/5294.jpg" alt="Login image" />
             </div>
 
             <div class="loginData min-w-0">
