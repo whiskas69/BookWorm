@@ -14,7 +14,8 @@ export default {
         midnight: '#2F4842',
         steelblue: '#86A5A8',
         spiritmountain: '#68858F',
-        yellow: '#FFCF81'
+        yellow: '#FFCF81',
+        navy: '#11009E'
       },
     },
     fontfamily: {
