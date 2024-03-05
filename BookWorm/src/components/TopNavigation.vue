@@ -76,7 +76,7 @@
               >Favorite</label
             >
           </RouterLink>
-          <RouterLink :to="{ name: 'home' }">
+          <RouterLink :to="{ name: 'detail' }">
             <label class="text-knitsweater font-medium text-lg px-10 pr-10"
               >My cart</label
             >

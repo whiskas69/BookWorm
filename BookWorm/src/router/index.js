@@ -12,6 +12,8 @@ import Favorite from '../views/FavoriteView.vue'
 import Shelf from '../views/ShelfView.vue'
 import Writing from '../views/WritingView.vue'
 
+import Detail from '../views/DetailView.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -64,6 +66,11 @@ const router = createRouter({
       path: '/writing',
       name: 'writing',
       component: Writing
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: Detail
     }
 
   ]
