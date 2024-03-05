@@ -3,8 +3,6 @@
 
 <template>
   <main>
-    <button class="text-9xl">
-      <router-link to="/history">history</router-link>
-    </button>
+    <p class="text-[220px] text-lime-400">Hello Book Worm</p>
   </main>
 </template>

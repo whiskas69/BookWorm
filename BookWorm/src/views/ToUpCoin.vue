@@ -20,7 +20,7 @@
     </div>
 
 <div class="grid justify-items-end ">
-    <button type="submit" class="submit bg-steelblue rounded-lg text-sm px-5 py-2.5 me-2 mb-2 w-1/12">Confirm</button>
+  <button type="submit" class="flex justify-center w-full px-6 py-3 mt-4 text-knitsweater  bg-steelblue rounded-lg md:mt-0 md:w-auto md:mx-2">Confirm</button>
 </div>
   </div>
 </template>
