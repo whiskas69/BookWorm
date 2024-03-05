@@ -1,11 +1,11 @@
 <template>
-  <div class="toUpCoin p-20 grid gap-y-5">
-    <div class="toUp">
+  <div class="p-20 grid gap-y-5">
+    <div class="History">
       <p class="title text-2xl">Order History</p>
     </div>
 
     <BoxHistory/>
-    
+
   </div>
 </template>
 

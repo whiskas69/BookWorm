@@ -1,5 +1,5 @@
 <template>
-  <div class="inputCoin flex flex-row items-center box-content h-32 w-full p-3 border-solid border-2 border-neutral-100 rounded-[30px] drop-shadow-lg">
+  <div class="inputCoin flex flex-row items-center box-content h-32 w-full p-3 mt-5 border-solid border-2 border-neutral-100 rounded-[30px] drop-shadow-lg">
     <div class="coverBook">
         <img
       class="loginImg w-[80px] rounded-lg ml-8"
