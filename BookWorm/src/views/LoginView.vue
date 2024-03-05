@@ -8,7 +8,6 @@
           <div class="flex min-w-0 gap-x-4">
             <img class="loginImg" src="@/assets/6263.jpg" alt="Login image" />
           </div>
-
           <div class="loginData min-w-0 flex-auto">
             <div class="mt-20">
               <label class="title">Welcome to the Land of Writing!</label>
