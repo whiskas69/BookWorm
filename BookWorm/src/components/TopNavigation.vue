@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky top-0 bg-cranberry shadow-lg rounded-bl-full font-Comfortaa"
+    class="sticky top-0 bg-cranberry shadow-lg rounded-bl-full font-Comfortaa z-20"
   >
     <nav class="flex flex-col items-center gap-4 pl-5 text-knitsweater py-2">
       <!-- nav top -->
