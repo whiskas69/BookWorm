@@ -66,9 +66,9 @@
               >Categories</label
             >
           </RouterLink>
-          <RouterLink :to="{ name: 'home' }">
+          <RouterLink :to="{ name: 'shelf' }">
             <label class="text-knitsweater font-medium text-lg px-10 pr-10"
-              >My library</label
+              >My Shelf</label
             >
           </RouterLink>
           <RouterLink :to="{ name: 'favorite' }">
