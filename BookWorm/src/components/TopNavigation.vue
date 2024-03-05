@@ -23,7 +23,7 @@
             <input
               type="search"
               id="default-search"
-              class="block bg-search w-full p-3 ps-10 text-sm text-camelcoat rounded-full f"
+              class="block bg-search w-full p-3 ps-10 text-sm text-camelcoat rounded-full"
               placeholder="Search"
               required
             />
