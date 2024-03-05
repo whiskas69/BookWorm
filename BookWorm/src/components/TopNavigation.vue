@@ -58,8 +58,8 @@
 
       <!-- navbottom -->
       <div class="container flex flex-row w-full gap-4">
+        
         <!-- Categories -->
-
         <div class="flex flex-row items-center">
           <RouterLink :to="{ name: 'home' }">
             <label class="text-knitsweater font-medium text-lg px-10 pr-10"
@@ -71,7 +71,7 @@
               >My library</label
             >
           </RouterLink>
-          <RouterLink :to="{ name: 'home' }">
+          <RouterLink :to="{ name: 'favorite' }">
             <label class="text-knitsweater font-medium text-lg px-10 pr-10"
               >Favorite</label
             >

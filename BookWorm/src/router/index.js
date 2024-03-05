@@ -6,6 +6,8 @@ import RegisterView from '../views/RegisterView.vue'
 import History from '../views/History.vue'
 import ToUpCoin from '../views/ToUpCoin.vue'
 
+import Favorite from '../views/FavoriteView.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -45,6 +47,12 @@ const router = createRouter({
       name: 'toupcoin',
       component: ToUpCoin
     },
+    {
+      path: '/fav',
+      name: 'favorite',
+      component: Favorite
+    }
+
   ]
 })
 
