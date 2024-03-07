@@ -3,52 +3,11 @@ import BoxBook from "../components/BoxBook.vue";
 </script>
 
 <template>
-  <div class="">
-    <div class="bg-[#D9D9D9] w-full h-[517px] flex items-center justify-center">
-      <label class="text-[100px]">Welcome to BookWorm</label>
-    </div>
-    <div class="w-full flex flex-col mt-10 px-20">
-      <div class="flex flex-row">
-        <label class="text-[28px] font-bold">Featured Categories</label>
-        <div class="flex items-end justify-end flex-auto">
-          <a href="" class="text-[16px] font-bold justify-end"
-            >All Categories ></a
-          >
-        </div>
-      </div>
-
-      <div class="flex flex-row mt-5 justify-between">
-        <div class="px-10 py-7 rounded-lg bg-[#FF94C2]">Romance Shop now</div>
-        <div class="px-10 py-7 rounded-lg bg-[#DEBBF3]">LGBTQ+ Shop now</div>
-        <div class="px-10 py-7 rounded-lg bg-[#A2D8F2]">Fantasy Shop now</div>
-        <div class="px-10 py-7 rounded-lg bg-[#E6DDB2]">
-          Documentary Shop now
-        </div>
-        <div class="px-10 py-7 rounded-lg bg-[#01304A] text-white">
-          Mystery Shop now
-        </div>
-      </div>
-    </div>
-
-    <div class="w-full flex flex-col mt-10 px-20">
-      <div class="flex flex-row">
-        <label class="text-[28px] font-bold">Bestselling Books</label>
-        <div class="flex items-end justify-end flex-auto">
-          <a href="" class="text-[16px] font-bold justify-end">All Books ></a>
-        </div>
-      </div>
-
-      <div class="flex flex-row mt-5 justify-between">
-        <div v-for="i in 6" :key="i" class="">
-          <BoxBook />
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap mt-10 items-center justify-center px-20">
+  <div>
+    <div class="flex flex-wrap mt-20 items-center justify-center px-20">
       <div class="w-full">
-        <label class="flex items-center justify-center text-[28px] font-bold">
-          Featured Books</label
+        <label class="flex items-center justify-center text-[36px] font-bold">
+          Fantasy</label
         >
         <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -60,7 +19,7 @@ import BoxBook from "../components/BoxBook.vue";
                 'text-white bg-steelblue': openTab === 1,
               }"
             >
-              Featured
+              Top Paid
             </a>
           </li>
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -72,7 +31,7 @@ import BoxBook from "../components/BoxBook.vue";
                 'text-white bg-steelblue': openTab === 2,
               }"
             >
-              Free
+              New
             </a>
           </li>
           <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
@@ -84,7 +43,7 @@ import BoxBook from "../components/BoxBook.vue";
                 'text-white bg-steelblue': openTab === 3,
               }"
             >
-              Most Viewed
+              Free
             </a>
           </li>
         </ul>

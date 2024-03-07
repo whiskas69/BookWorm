@@ -11,6 +11,14 @@ import ToUpCoin from '../views/ToUpCoin.vue'
 import Cart from '@/views/Cart.vue'
 
 import Favorite from '../views/FavoriteView.vue'
+import Shelf from '../views/ShelfView.vue'
+import Writing from '../views/WritingView.vue'
+
+import Detail from '../views/DetailView.vue'
+import Upload from '../views/UploadView.vue'
+import Incategory from '../views/InCategoryView.vue'
+import Bestselling from '../views/BestsellingView.vue'
+import Catrgory from '../views/CategoryView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,8 +65,44 @@ const router = createRouter({
     },
     {
       path: '/fav',
+      path: '/favorite',
       name: 'favorite',
       component: Favorite
+    },
+    {
+      path: '/shelf',
+      name: 'shelf',
+      component: Shelf
+    },
+    {
+      path: '/writing',
+      name: 'writing',
+      component: Writing
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: Detail
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: Upload
+    },
+    {
+      path: '/incategory',
+      name: 'incategory',
+      component: Incategory
+    },
+    {
+      path: '/bestselling',
+      name: 'bestselling',
+      component: Bestselling
+    },
+    {
+      path: '/catrgory',
+      name: 'catrgory',
+      component: Catrgory
     }
 
   ]
