@@ -8,6 +8,8 @@ import EditProfile from '../views/EditProfile.vue'
 import History from '../views/History.vue'
 import ToUpCoin from '../views/ToUpCoin.vue'
 
+import Cart from '@/views/Cart.vue'
+
 import Favorite from '../views/FavoriteView.vue'
 
 const router = createRouter({
@@ -47,6 +49,11 @@ const router = createRouter({
       path: '/toupcoin',
       name: 'toupcoin',
       component: ToUpCoin
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Cart
     },
     {
       path: '/fav',
