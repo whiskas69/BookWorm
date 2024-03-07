@@ -16,6 +16,7 @@ import Detail from '../views/DetailView.vue'
 import Upload from '../views/UploadView.vue'
 import Incategory from '../views/InCategoryView.vue'
 import Bestselling from '../views/BestsellingView.vue'
+import Catrgory from '../views/CategoryView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -89,6 +90,11 @@ const router = createRouter({
       path: '/bestselling',
       name: 'bestselling',
       component: Bestselling
+    },
+    {
+      path: '/catrgory',
+      name: 'catrgory',
+      component: Catrgory
     }
 
   ]
