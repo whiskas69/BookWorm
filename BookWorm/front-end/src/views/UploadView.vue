@@ -14,7 +14,7 @@
               class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center"
             >
               <div
-                class="h-full w-full text-center flex flex-col items-center justify-center items-center"
+                class="h-full w-full text-center flex flex-col justify-center items-center"
               >
                 <p class="pointer-none text-gray-500">
                   <span class="text-sm">Drag and drop</span> files here <br />
@@ -224,7 +224,7 @@
               class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center"
             >
               <div
-                class="h-full w-full text-center flex flex-col items-center justify-center items-center"
+                class="h-full w-full text-center flex flex-col justify-center items-center"
               >
                 <p class="pointer-none text-gray-500">
                   <span class="text-sm">Drag and drop</span> files here <br />

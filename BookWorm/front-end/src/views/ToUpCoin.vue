@@ -19,7 +19,7 @@
       />
     </div>
 
-<div class="grid justify-items-end ">
+<div class="grid justify-items-end">
   <button type="submit" class="flex justify-center w-full px-6 py-3 mt-4 text-knitsweater  bg-steelblue rounded-lg md:mt-0 md:w-auto md:mx-2">Confirm</button>
 </div>
   </div>
