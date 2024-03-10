@@ -1,4 +1,4 @@
-import {db, Table} from './db.config.js'
+import {db, Table} from './dynamodb.js'
 
 // Create or Update users
 const createOrUpdate = async (data = {}) =>{
