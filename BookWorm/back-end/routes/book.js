@@ -1,15 +1,15 @@
 import express from 'express'
 import { 
-    createOrUpdateFlashCard,
-    readAllFlashCardSet,
-    getFlashCardById,
-    deleteFlashCardById } from '../query/flashDB.js'
+    createOrUpdateBook,
+    readAllBook,
+    getBookById,
+    deleteBookById } from '../query/book.js'
 
 const router = express.Router()
 
 // READ ALL Users
-router.get('/flashcardset', async(req, res) => {
-    const { success, data } = await readAllFlashCardSet()
+router.get('/book', async(req, res) => {
+    const { success, data } = await readAllBook()
 
     if(success){
         return res.json({success, data})
@@ -18,9 +18,9 @@ router.get('/flashcardset', async(req, res) => {
 })
 
 // Get User by ID
-router.get('/flashcardset/:id', async(req, res) => {
+router.get('/book/:id', async(req, res) => {
     const { id } = req.params
-    const { success, data } = await getFlashCardById(id)
+    const { success, data } = await getBookById(id)
     console.log(data)
     if(success){
         return res.json({success, data})
@@ -31,9 +31,9 @@ router.get('/flashcardset/:id', async(req, res) => {
 
 
 // Create User
-router.post('/flashcardset', async(req, res) => {
-    console.log("post flashcard set")
-    const { success, data } = await createOrUpdateFlashCard(req.body)
+router.post('/createbook', async(req, res) => {
+    console.log("post book")
+    const { success, data } = await createOrUpdateBook(req.body)
 
     if(success){
         return res.json({success, data})
@@ -44,12 +44,12 @@ router.post('/flashcardset', async(req, res) => {
 
 
 // Update User by ID
-router.put('/flashcardset/:id', async(req, res) => {
+router.put('/book/:id', async(req, res) => {
     const user = req.body
     const { id } = req.params
     user.id = parseInt(id)
 
-    const { success, data } = await createOrUpdateFlashCard(user)
+    const { success, data } = await createOrUpdateBook(id)
 
     if(success){
         return res.json({success, data})
@@ -60,9 +60,9 @@ router.put('/flashcardset/:id', async(req, res) => {
 
 
 // Delete User by Id
-router.delete('/flashcardset/:id', async (req, res) => {
+router.delete('/deletebook/:id', async (req, res) => {
     const { id } = req.params
-    const { success, data } = await deleteFlashCardById(id)
+    const { success, data } = await deleteBookById(id)
     if (success) {
       return res.json({ success, data })
     }

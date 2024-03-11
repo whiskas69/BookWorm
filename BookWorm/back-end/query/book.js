@@ -1,9 +1,9 @@
-import {db, FlashCardTable} from '../dynamo'
+import {db, BookTable} from '../dynamo'
 
 // Create or Update users
-const createOrUpdateFlashCard = async (data = {}) =>{
+const createOrUpdateBook = async (data = {}) =>{
     const params = {
-        TableName: FlashCardTable,
+        TableName: BookTable,
         Item: data
     }
     try{
@@ -18,9 +18,9 @@ const createOrUpdateFlashCard = async (data = {}) =>{
 }
 
 // Read all users
-const readAllFlashCardSet = async()=>{
+const readAllBook = async()=>{
     const params = {
-        TableName: FlashCardTable
+        TableName: BookTable
     }
 
     try{
@@ -33,9 +33,9 @@ const readAllFlashCardSet = async()=>{
 }
 
 // Read Users by ID
-const getFlashCardById = async (value, key = 'FlashCardId') => {
+const getBookById = async (value, key = 'BookId') => {
     const params = {
-        TableName: FlashCardTable,
+        TableName: BookTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -49,9 +49,9 @@ const getFlashCardById = async (value, key = 'FlashCardId') => {
 }
 
 // Delete User by ID
-const deleteFlashCardById = async(value, key = 'FlashCardId' ) => { 
+const deleteBookById = async(value, key = 'BookId' ) => { 
     const params = {
-        TableName: FlashCardTable,
+        TableName: BookTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -68,8 +68,8 @@ const deleteFlashCardById = async(value, key = 'FlashCardId' ) => {
 
 
 export {
-    createOrUpdateFlashCard,
-    readAllFlashCardSet,
-    getFlashCardById,
-    deleteFlashCardById
+    createOrUpdateBook,
+    readAllBook,
+    getBookById,
+    deleteBookById
 }

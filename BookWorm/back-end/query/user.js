@@ -1,10 +1,10 @@
 // import {db, Table} from './db.config.js'
-const { db, Table } = require('../dynamo.js');
+const { db, UserTable } = require('../dynamo.js');
 
 // Create or Update users
 const createOrUpdate = async (data = {}) =>{
     const params = {
-        TableName: Table,
+        TableName: UserTable,
         Item: data
     }
 
@@ -25,7 +25,7 @@ const createOrUpdate = async (data = {}) =>{
 const readAllUsers = async()=>{
 
     const params = {
-        TableName: Table
+        TableName: UserTable
     }
     
     try{
@@ -43,7 +43,7 @@ const readAllUsers = async()=>{
 // Read Users by ID
 const getUserById = async (value, key = 'id') => {
     const params = {
-        TableName: Table,
+        TableName: UserTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -59,7 +59,7 @@ const getUserById = async (value, key = 'id') => {
 // Delete User by ID
 const deleteUserById = async(value, key = 'id' ) => { 
     const params = {
-        TableName: Table,
+        TableName: UserTable,
         Key: {
             [key]: parseInt(value)
         }
