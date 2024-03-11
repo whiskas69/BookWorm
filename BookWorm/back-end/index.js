@@ -1,24 +1,24 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import dotenv from 'dotenv'
+const express = require("express")
+ 
+const cors = require("cors")
+const bodyParser = require("body-parser")
 
-import user from './routes.js'
+const app = express();
 
-dotenv.config()
+app.use(cors())
 
-const app = express()
+app.use(express.static('static'))
 
-app.use(bodyParser.json())
+// Encode body
+app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: true}))
 
-app.get("/", (req, res)=>{
-    res.json({"Hi":"Hello World"})
+const indexRouter = require('./routes/index')
+
+
+app.use(indexRouter.router)
+
+
+app.listen(3000, () => {
+  console.log(`Example app listening at http://localhost:3000`)
 })
-
-app.use('/api', user)
-
-const PORT = 8000
-
-app.listen(PORT, () => {
-    console.log(`Port listening on ${PORT}`)
-})
-
