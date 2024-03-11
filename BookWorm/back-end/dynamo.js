@@ -2,10 +2,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 const AWS = require('aws-sdk');
 
-const AWS_ACCESS_KEY_ID = "AWS_SECRET_ACCESS_KEY"
+const AWS_ACCESS_KEY_ID = "ASIAQ3EGT5ZZLNAR7MAU"
+const AWS_SECRET_ACCESS_KEY = "JKMgfayTtQIWPmuLnI91C5khQzn1iBeIfBQagCGE"
+const AWS_SESSION_TOKEN=`FwoGZXIvYXdzEDUaDLB+SwUIKSvxay5N/SLFAeBh3pAaHPpVvYv8dSN6RKG0Vrksh+m0uukSeEM3J26B4kILlmC7qpHOmRWc5XPW70T638fFdXo2Mws5z0+DwcNJUzCT0xTAPJlgZFhoWQ56jbAw+jlmxA+X01W4Vug9KPMBZW4WLshNJmZee9mo8jezFN/hXE/OCkAOAwJkM77N6ytybshvjUQvPQVLpTYdYnMv2/ib+KmiW+pgGjJy8nutxpTVWqAuK8axrhlHKlG1/LYYVmqZhAwDQnQGVRaVEhU9Cqs1KKvVu68GMi318NJIvRQxNM9rzUwKZI/WdorEGp/oUridCHVltI7xa6fJ+sbZ42MxmDx2oMg=`
 
-const AWS_SECRET_ACCESS_KEY = "AWS_SECRET_ACCESS_KEY"
-const AWS_SESSION_TOKEN=`AWS_SESSION_TOKEN`
 const accessKeyId  = AWS_ACCESS_KEY_ID
 const secretAccessKey = AWS_SECRET_ACCESS_KEY
 const sessionToken =  AWS_SESSION_TOKEN
@@ -24,7 +24,7 @@ AWS.config.update({
 
 const db = new AWS.DynamoDB.DocumentClient()
 
-const Table = 'Users'
+const Table = 'users'
 
 
 
