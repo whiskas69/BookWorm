@@ -28,7 +28,7 @@
                   id="Username"
                   name="Username"
                   type="Username"
-                  autocomplete="Username"
+                  v-model="username"
                   required=""
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -42,7 +42,7 @@
                   id="Password"
                   name="Password"
                   type="Password"
-                  autocomplete="Password"
+                  v-model="password"
                   required=""
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
@@ -51,20 +51,22 @@
             <div>
               <button
                 type="submit"
+                @click="login()"
                 class="submit flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign in
               </button>
             </div>
-            <p class="mt-10 text-center text-sm text-gray-500">
-              Don't have an account yet?
-              {{ " " }}
-              <a
-                href="#"
-                class="signUp font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-                >Sign Up</a
-              >
-            </p>
+            
+            <p class="mt-5 text-center text-sm text-gray-500">
+                Don't have an account yet?
+                {{ " " }}
+                <router-link to="/register">
+                  <p class="signUp font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                    Sign Up
+                  </p>
+                </router-link>
+              </p>
           </div>
         </div>
       </div>
@@ -75,8 +77,33 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      username: "",
+      password: "",
+      err: "",
+    };
   },
+  mrthods: {
+    login() {
+      const data = {
+        username: this.username,
+        password: this.password,
+      };
+      
+      axios.post("http://52.86.167.253:3000/login", data)
+      .then((res) => {
+        this.err = ""
+        console.log(res)
+        alert("You are already our mrmber!");
+        this.$router.push({ path: "/" });
+      })
+      .catch((err) => {
+        this.err = err.response.data.details.message
+        console.log(err)
+        alert(err.response.data.details.message);
+      });
+    }
+  }
 };
 </script>
 

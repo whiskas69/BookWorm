@@ -1,41 +1,49 @@
-import {db, FlashCardTable} from '../dynamo'
+// import {db, Table} from './db.config.js'
+const { db, UserTable } = require('../dynamo.js');
 
 // Create or Update users
-const createOrUpdateFlashCard = async (data = {}) =>{
+const createOrUpdate = async (data = {}) =>{
     const params = {
-        TableName: FlashCardTable,
+        TableName: UserTable,
         Item: data
     }
+
+    console.log(params.Item)
+
     try{
-        console.log("try")
+        console.log("folk")
         await db.put(params).promise()
         return { success: true }
-        console.log("try")
+        
     } catch(error){
-        console.log("catch")
+        console.log(error)
         return { success: false}
     }
 }
 
 // Read all users
-const readAllFlashCardSet = async()=>{
-    const params = {
-        TableName: FlashCardTable
-    }
+const readAllUsers = async()=>{
 
+    const params = {
+        TableName: UserTable
+    }
+    
     try{
         const { Items = [] } = await db.scan(params).promise()
         return { success: true, data: Items }
 
+
     } catch(error){
+        console.log(error)
         return { success: false, data: null }
     }
+
 }
 
 // Read Users by ID
-const getFlashCardById = async (value, key = 'FlashCardId') => {
+const getUserById = async (value, key = 'id') => {
     const params = {
-        TableName: FlashCardTable,
+        TableName: UserTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -49,9 +57,9 @@ const getFlashCardById = async (value, key = 'FlashCardId') => {
 }
 
 // Delete User by ID
-const deleteFlashCardById = async(value, key = 'FlashCardId' ) => { 
+const deleteUserById = async(value, key = 'id' ) => { 
     const params = {
-        TableName: FlashCardTable,
+        TableName: UserTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -62,14 +70,16 @@ const deleteFlashCardById = async(value, key = 'FlashCardId' ) => {
         return {  success: true }
 
     } catch (error) {
+
+    
         return{ success: false }
     }
 }
 
 
-export {
-    createOrUpdateFlashCard,
-    readAllFlashCardSet,
-    getFlashCardById,
-    deleteFlashCardById
+module.exports = {
+    createOrUpdate,
+    readAllUsers,
+    getUserById,
+    deleteUserById
 }

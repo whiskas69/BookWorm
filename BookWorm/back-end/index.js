@@ -13,7 +13,7 @@ app.use(express.static('static'))
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true}))
 
-const indexRouter = require('./routes/index')
+const indexRouter = require('./routes/user')
 
 
 app.use(indexRouter.router)

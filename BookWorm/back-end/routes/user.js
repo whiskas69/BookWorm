@@ -3,9 +3,7 @@ const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
-const  { createOrUpdate, deleteUserById, getUserById, readAllUsers } = require('../query/db.js');
-
-
+const  { createOrUpdate, deleteUserById, getUserById, readAllUsers } = require('../query/user.js');
 
 router = express.Router();
 
@@ -18,29 +16,31 @@ router.get("/",  async function(req, res, next){
     return res.status(500).json({success:false, messsage: "Error"})
 })
 
+// เช็คได้แล้ว
 router.post("/login", async (req, res, next) =>{
-    const { name, password } = req.body;
+    const { username, password } = req.body;
  
      const { success, data } = await readAllUsers()
      
      console.log(data)
-    //  console.log(data[0].name)
      
-     const nameDb = data[0].name;
-     const passwordDb = data[0].password;
-
-    // Example validation (replace with your actual authentication logic)
-    if (name === nameDb && password === passwordDb) {
-        res.json({ message: 'Login successful' });
+     const user = data.find(user => user.username === username && user.password === password);
+    
+    if (user) {
+        res.json({ message: "Login successful" });
     } else {
         res.status(401).json({ message: 'Invalid credentials' });
     }
 });
 
-
+// เข้าdbแล้ว แต่ยังไม่วาลิอะไรทั้งนั้น
 router.post("/register", async(req, res, next) =>{
-    const { name, password } = req.body;
+    const id = Math.floor(1000 + Math.random() * 9000);
+    const { username, email, password, displayname } = req.body;
     console.log(req.body)
+    console.log("id", id)
+    
+    req.body.id = id;
 
     // Example validation (replace with your actual authentication logic)
     try{
@@ -50,10 +50,6 @@ router.post("/register", async(req, res, next) =>{
     catch(err){
          res.status(401).json({ message: 'Invalid credentials' });
     }
-       
-   
-       
-    
 });
 
 

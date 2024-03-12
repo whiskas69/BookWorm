@@ -1,49 +1,41 @@
-// import {db, Table} from './db.config.js'
-const { db, Table } = require('../dynamo.js');
+import {db, BookTable} from '../dynamo'
 
 // Create or Update users
-const createOrUpdate = async (data = {}) =>{
+const createOrUpdateBook = async (data = {}) =>{
     const params = {
-        TableName: Table,
+        TableName: BookTable,
         Item: data
     }
-
-    console.log(params.Item)
-
     try{
-        console.log("folk")
+        console.log("try")
         await db.put(params).promise()
         return { success: true }
-        
+        console.log("try")
     } catch(error){
-        console.log(error)
+        console.log("catch")
         return { success: false}
     }
 }
 
 // Read all users
-const readAllUsers = async()=>{
-
+const readAllBook = async()=>{
     const params = {
-        TableName: Table
+        TableName: BookTable
     }
-    
+
     try{
         const { Items = [] } = await db.scan(params).promise()
         return { success: true, data: Items }
 
-
     } catch(error){
-        console.log(error)
         return { success: false, data: null }
     }
-
 }
 
 // Read Users by ID
-const getUserById = async (value, key = 'id') => {
+const getBookById = async (value, key = 'BookId') => {
     const params = {
-        TableName: Table,
+        TableName: BookTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -57,9 +49,9 @@ const getUserById = async (value, key = 'id') => {
 }
 
 // Delete User by ID
-const deleteUserById = async(value, key = 'id' ) => { 
+const deleteBookById = async(value, key = 'BookId' ) => { 
     const params = {
-        TableName: Table,
+        TableName: BookTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -70,16 +62,14 @@ const deleteUserById = async(value, key = 'id' ) => {
         return {  success: true }
 
     } catch (error) {
-
-    
         return{ success: false }
     }
 }
 
 
-module.exports = {
-    createOrUpdate,
-    readAllUsers,
-    getUserById,
-    deleteUserById
+export {
+    createOrUpdateBook,
+    readAllBook,
+    getBookById,
+    deleteBookById
 }
