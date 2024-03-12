@@ -155,7 +155,7 @@ export default {
           .then((res) => {
             this.err = "";
             console.log(res);
-            alert("You are already our mrmber!");
+            alert("You are already our member!");
             this.$router.push({ path: "/login" });
           })
           .catch((err) => {
