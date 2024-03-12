@@ -33,7 +33,7 @@ const readAllBook = async()=>{
 }
 
 // Read Users by ID
-const getBookById = async (value, key = 'BookId') => {
+const getBookById = async (value, key = 'id') => {
     const params = {
         TableName: BookTable,
         Key: {

@@ -11,9 +11,12 @@ import BoxBook from "../components/BoxBook.vue";
       <div class="flex flex-row">
         <label class="text-[28px] font-bold">Featured Categories</label>
         <div class="flex items-end justify-end flex-auto">
-          <a href="" class="text-[16px] font-bold justify-end"
-            >All Categories ></a
-          >
+          <router-link
+                  class="text-[16px] font-bold justify-end"
+                  to="/catrgory"
+                >
+                  All Categories >
+                </router-link>
         </div>
       </div>
 
@@ -32,7 +35,7 @@ import BoxBook from "../components/BoxBook.vue";
 
     <div class="w-full flex flex-col mt-10 px-20">
       <div class="flex flex-row">
-        <label class="text-[28px] font-bold">Bestselling Books</label>
+        <label class="text-[28px] font-bold">Books</label>
         <div class="flex items-end justify-end flex-auto">
           <a href="" class="text-[16px] font-bold justify-end">All Books ></a>
         </div>
@@ -63,12 +66,6 @@ import BoxBook from "../components/BoxBook.vue";
                 >
                   {{ book.bookname }}
                 </h5>
-                <h5
-                  class="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50 flex"
-                >
-                  5.0
-                  <i class="fa-solid fa-star ml-2"></i>
-                </h5>
               </div>
               <p class="mb-1 text-[11] text-neutral-600 dark:text-neutral-200">
                 {{ book.writer }}
@@ -84,84 +81,6 @@ import BoxBook from "../components/BoxBook.vue";
                 >
                   Free
                 </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-wrap mt-10 items-center justify-center px-20">
-      <div class="w-full">
-        <label class="flex items-center justify-center text-[28px] font-bold">
-          Featured Books</label
-        >
-        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a
-              class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
-              v-on:click="toggleTabs(1)"
-              v-bind:class="{
-                'text-steelblue bg-white': openTab !== 1,
-                'text-white bg-steelblue': openTab === 1,
-              }"
-            >
-              Featured
-            </a>
-          </li>
-          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a
-              class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
-              v-on:click="toggleTabs(2)"
-              v-bind:class="{
-                'text-steelblue bg-white': openTab !== 2,
-                'text-white bg-steelblue': openTab === 2,
-              }"
-            >
-              Free
-            </a>
-          </li>
-          <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-            <a
-              class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal"
-              v-on:click="toggleTabs(3)"
-              v-bind:class="{
-                'text-steelblue bg-white': openTab !== 3,
-                'text-white bg-steelblue': openTab === 3,
-              }"
-            >
-              Most Viewed
-            </a>
-          </li>
-        </ul>
-        <div
-          class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
-        >
-          <div class="px-4 py-5 flex-auto">
-            <div class="tab-content tab-space">
-              <div
-                v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
-                class="flex flex-row justify-between"
-              >
-                <div v-for="i in 6" :key="i" class="">
-                  <BoxBook />
-                </div>
-              </div>
-              <div
-                v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }"
-                class="flex flex-row justify-between"
-              >
-                <div v-for="i in 6" :key="i" class="">
-                  <BoxBook />
-                </div>
-              </div>
-              <div
-                v-bind:class="{ hidden: openTab !== 3, block: openTab === 3 }"
-                class="flex flex-row justify-between"
-              >
-                <div v-for="i in 6" :key="i" class="">
-                  <BoxBook />
-                </div>
               </div>
             </div>
           </div>

@@ -21,12 +21,6 @@
         >
           ENCELADUS
         </h5>
-        <h5
-          class="mb-2 text-sm font-bold leading-tight text-neutral-800 dark:text-neutral-50 flex"
-        >
-          5.0
-          <i class="fa-solid fa-star ml-2"></i>
-        </h5>
       </div>
       <p class="mb-1 text-[11] text-neutral-600 dark:text-neutral-200">
         Brandon Q. Morris
@@ -39,7 +33,7 @@
         <a
           href="#"
           class="text-black bg-yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-          >19 THB</a
+          >Free</a
         >
       </div>
     </div>

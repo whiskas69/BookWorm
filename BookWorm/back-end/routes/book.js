@@ -18,7 +18,9 @@ router.get('/book', async(req, res) => {
 
 // Get User by ID
 router.get('/book/:id', async(req, res) => {
+    console.log("req", req.params)
     const { id } = req.params
+    console.log("id", req.params)
     const { success, data } = await getBookById(id)
     console.log(data)
     if(success){

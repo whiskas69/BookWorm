@@ -71,16 +71,6 @@
                 >My Shelf</label
               >
             </RouterLink>
-            <RouterLink :to="{ name: 'favorite' }">
-              <label class="text-knitsweater font-medium text-lg px-10 pr-10"
-                >Favorite</label
-              >
-            </RouterLink>
-            <RouterLink :to="{ name: 'detail' }">
-              <label class="text-knitsweater font-medium text-lg px-10 pr-10"
-                >My cart</label
-              >
-            </RouterLink>
           </div>
         </div>
       </nav>

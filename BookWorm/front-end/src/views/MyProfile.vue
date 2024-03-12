@@ -14,13 +14,9 @@
       </div>
 
       <div class="flex flex-row justify-end flex-auto items-center">
-        <div class="flex flex-col">
-          <label class="coin text-xl ml-10 text-[#FFB743]">1000</label>
-          <label class="coin text-xl ml-10 text-[#FFCF81]">เหรียญ</label>
-        </div>
 
         <div class="flex flex-col">
-          <label class="work text-xl ml-10 text-[#3A3A3A]">1000</label>
+          <label class="work text-xl ml-10 text-[#3A3A3A]">1</label>
           <label class="work text-xl ml-10 text-[#B2ACAC]">งานเขียน</label>
         </div>
       </div>
@@ -77,18 +73,6 @@
       >
       Upload Your Book
       </button>
-      <button
-        type="submit"
-        class="flex justify-center w-full px-6 py-5 mt-9 border-2 border-[#4C3FB6] rounded-[20px] "
-      >
-      My Favorite
-      </button>
-      <button
-        type="submit"
-        class="flex justify-center w-full px-6 py-5 mt-9 border-2 border-[#4C3FB6] rounded-[20px] "
-      >
-      Order History
-      </button>
       </div>
 
       <div class="">
@@ -97,18 +81,6 @@
         class="flex justify-center w-full px-6 py-5 mt-4 border-2 border-[#B77855] rounded-[20px] "
       >
       My Writing
-      </button>
-      <button
-        type="submit"
-        class="flex justify-center w-full px-6 py-5 mt-9 border-2 border-[#4C3FB6] rounded-[20px] "
-      >
-      My Shelf
-      </button>
-      <button
-        type="submit"
-        class="flex justify-center w-full px-6 py-5 mt-9 border-2 border-[#4C3FB6] rounded-[20px] "
-      >
-      To-up Coin
       </button>
       </div>
     </div>
