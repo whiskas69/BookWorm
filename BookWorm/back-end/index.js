@@ -14,9 +14,10 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true}))
 
 const indexRouter = require('./routes/user')
-
+const bookRouter = require('./routes/book')
 
 app.use(indexRouter.router)
+app.use(bookRouter.router)
 
 
 app.listen(3000, () => {

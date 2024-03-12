@@ -1,4 +1,4 @@
-const { db, BookTable } = require('../dynamo.js');
+import {db, BookTable} from '../dynamo'
 
 // Create or Update users
 const createOrUpdateBook = async (data = {}) =>{
@@ -66,7 +66,8 @@ const deleteBookById = async(value, key = 'BookId' ) => {
     }
 }
 
-module.exports = {
+
+export {
     createOrUpdateBook,
     readAllBook,
     getBookById,

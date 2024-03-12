@@ -123,6 +123,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -135,6 +137,8 @@ export default {
   },
   methods: {
     submit() {
+      console.log("In regis")
+      
       if (
         this.password === this.conpassword &&
         this.password != "" &&

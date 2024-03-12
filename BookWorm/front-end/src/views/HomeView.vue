@@ -51,7 +51,7 @@ import BoxBook from "../components/BoxBook.vue";
             >
               <img
                 class="rounded-t-lg sm:m-h-64 md:h-64 w-full bg-cover"
-                src="@/assets/book.jpg"
+                :src="book.bookimg"
                 alt=""
               />
             </div>
@@ -82,7 +82,7 @@ import BoxBook from "../components/BoxBook.vue";
                   class="text-black bg-yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                   :to="`/book/detail/${book.id}`"
                 >
-                  19 THB
+                  Free
                 </router-link>
               </div>
             </div>

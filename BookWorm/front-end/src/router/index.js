@@ -77,6 +77,11 @@ const router = createRouter({
       component: Detail
     },
     {
+      path: '/book/detail/:id',
+      name: 'detailid',
+      component: Detail
+    },
+    {
       path: '/upload',
       name: 'upload',
       component: Upload
