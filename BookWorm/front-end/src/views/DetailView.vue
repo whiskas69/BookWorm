@@ -113,7 +113,7 @@ export default {
       const bookid = this.$route.params.id;
       console.log("bookid", bookid)
       
-      axios.get(`http://52.86.167.253:3000/book/${bookid}`)
+      axios.get(`http://3.93.61.199:3000/book/${bookid}`)
       .then((response) => {
         console.log("res", response.data.data)
         this.book = response.data.data

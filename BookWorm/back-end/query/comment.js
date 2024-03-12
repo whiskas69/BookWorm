@@ -1,9 +1,8 @@
-import {db, BookTable} from '../dynamo'
-
+const { db, CommentTable } = require('../dynamo.js');
 // Create or Update users
-const createOrUpdateBook = async (data = {}) =>{
+const createOrUpdateComment = async (data = {}) =>{
     const params = {
-        TableName: BookTable,
+        TableName: CommentTable,
         Item: data
     }
     try{
@@ -18,9 +17,9 @@ const createOrUpdateBook = async (data = {}) =>{
 }
 
 // Read all users
-const readAllBook = async()=>{
+const readAllComment = async()=>{
     const params = {
-        TableName: BookTable
+        TableName: CommentTable
     }
 
     try{
@@ -33,9 +32,9 @@ const readAllBook = async()=>{
 }
 
 // Read Users by ID
-const getBookById = async (value, key = 'BookId') => {
+const getCommentById = async (value, key = 'CommentId') => {
     const params = {
-        TableName: BookTable,
+        TableName: CommentTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -49,9 +48,9 @@ const getBookById = async (value, key = 'BookId') => {
 }
 
 // Delete User by ID
-const deleteBookById = async(value, key = 'BookId' ) => { 
+const deleteCommentById = async(value, key = 'CommentId' ) => { 
     const params = {
-        TableName: BookTable,
+        TableName: CommentTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -67,9 +66,9 @@ const deleteBookById = async(value, key = 'BookId' ) => {
 }
 
 
-export {
-    createOrUpdateBook,
-    readAllBook,
-    getBookById,
-    deleteBookById
+module.exports = {
+    createOrUpdateComment,
+    readAllComment,
+    getCommentById,
+    deleteCommentById
 }
