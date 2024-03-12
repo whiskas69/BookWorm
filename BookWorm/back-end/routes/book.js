@@ -1,9 +1,8 @@
-import express from 'express'
-import { 
-    createOrUpdateBook,
+const express = require("express");
+const  { createOrUpdateBook,
     readAllBook,
     getBookById,
-    deleteBookById } from '../query/book.js'
+    deleteBookById } = require('../query/book.js');
 
 const router = express.Router()
 
@@ -33,13 +32,30 @@ router.get('/book/:id', async(req, res) => {
 // Create User
 router.post('/createbook', async(req, res) => {
     console.log("post book")
-    const { success, data } = await createOrUpdateBook(req.body)
+    
+    const id = Math.floor(1000 + Math.random() * 9000);
+    const { bookname, writer, text, cate, bookimg } = req.body;
+    console.log(req.body)
+    console.log("id", id)
+    
+    req.body.id = id;
 
-    if(success){
-        return res.json({success, data})
+    // Example validation (replace with your actual authentication logic)
+    try{
+         const { success, data } = await createOrUpdateBook(req.body)
+         res.json({ message: 'register successful' });
     }
+    catch(err){
+         res.status(401).json({ message: 'Invalid credentials' });
+    }
+    
+    //const { success, data } = await createOrUpdateBook(req.body)
 
-    return res.status(500).json({success: false, message: 'Error'})
+    //if(success){
+    //    return res.json({success, data})
+    //}
+
+    //return res.status(500).json({success: false, message: 'Error'})
 })
 
 
@@ -72,4 +88,4 @@ router.delete('/deletebook/:id', async (req, res) => {
 
 
 
-export default router
+exports.router = router;

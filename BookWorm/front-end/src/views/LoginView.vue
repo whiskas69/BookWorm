@@ -75,6 +75,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -83,24 +85,29 @@ export default {
       err: "",
     };
   },
-  mrthods: {
+  methods: {
     login() {
-      const data = {
+      
+      console.log("In login")
+      const user = {
         username: this.username,
         password: this.password,
       };
       
-      axios.post("http://52.86.167.253:3000/login", data)
+      axios.post("http://52.86.167.253:3000/login", user)
       .then((res) => {
         this.err = ""
-        console.log(res)
+        console.log("res", res)
         alert("You are already our mrmber!");
         this.$router.push({ path: "/" });
       })
       .catch((err) => {
-        this.err = err.response.data.details.message
-        console.log(err)
-        alert(err.response.data.details.message);
+        console.log("err", err)
+        alert("Incorrect username or password.");
+        
+        this.err = err.response.data
+        console.log("err.response.data", this.err);
+        //alert(err.response.data.details.message);
       });
     }
   }
