@@ -86,7 +86,6 @@ export default {
     };
   },
   methods: {
-  methods: {
     login() {
       
       console.log("In login")
@@ -98,8 +97,8 @@ export default {
       axios.post("http://52.86.167.253:3000/login", user)
       .then((res) => {
         this.err = ""
-        console.log(res)
-        alert("You are already our member!");
+        console.log("res", res)
+        alert("You are already our mrmber!");
         this.$router.push({ path: "/" });
       })
       .catch((err) => {
