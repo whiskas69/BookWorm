@@ -16,9 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true}))
 const indexRouter = require('./routes/user')
 const bookRouter = require('./routes/book')
 const commentRouter = require('./routes/comment')
+const ShelfRouter = require('./routes/shelf')
 
 app.use(indexRouter.router)
 app.use(bookRouter.router)
+app.use(commentRouter.router)
+app.use(ShelfRouter.router)
 
 
 app.listen(3000, () => {

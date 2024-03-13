@@ -27,7 +27,7 @@ router.post("/login", async (req, res, next) =>{
      const user = data.find(user => user.username === username && user.password === password);
     
     if (user) {
-        res.json({ message: "Login successful" });
+        res.json({ userId: user.id, username:user.username, message: 'Login succes' });
     } else {
         res.status(401).json({ message: 'Invalid credentials' });
     }

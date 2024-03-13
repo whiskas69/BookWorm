@@ -41,7 +41,7 @@ router.post('/createbook', async(req, res) => {
     console.log("id", id)
     
     req.body.id = id;
-
+    console.log(req.body)
     // Example validation (replace with your actual authentication logic)
     try{
          const { success, data } = await createOrUpdateBook(req.body)

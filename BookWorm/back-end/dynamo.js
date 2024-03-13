@@ -2,9 +2,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 const AWS = require('aws-sdk');
 
-const AWS_ACCESS_KEY_ID = "ASIAQ3EGT5ZZN6EROXTA"
-const AWS_SECRET_ACCESS_KEY = "kKqngS/XyMo8SIV+0otEzbPUdrui/1vCnS4I+VKl"
-const AWS_SESSION_TOKEN=`FwoGZXIvYXdzEFQaDFO0kDie6JfNGwq5sCLFATarR0P0oytvtzHtE061MgZOGu+/LGMaF5lP5dr4mabPmV9usvvsbJL6BBZlAQfqRzoH5yLQKZ8Ub5OX0oDdjoT24/iJkmWfBwCObfoRmUF3SzAvOf6S4CIYmLn4px5gF3rziyzgfLTFibdLPbYx2VehZVjNhoaoD7pdddWfseLLNMtKndSTu33MYQssJmNz4THgAHQ25q4OVnXDoG2rhnRPTGUTNKJnQbsM2SyVY/6QuLJZoxHVvEyjuQV3ExTtoypgsiC2KN60wq8GMi1Oc16Yiqalr7/CeQpctWvfcRxPXQ72wexeC+vIYB5VM9OAUiqdGanxpOgiFMg=`
+const AWS_ACCESS_KEY_ID = "ASIAQ3EGT5ZZB6E65EV7"
+const AWS_SECRET_ACCESS_KEY = "QjitglF1ycjAp/dBRU2je9FZ0bEnlQa4Mdbn7jh1"
+const AWS_SESSION_TOKEN=`FwoGZXIvYXdzEFwaDFD5TcU9zRHxpIbdHiLFARgWX1t2q6qCDVeAy3exQTwEh2fKm6wgy58Nwj9AuJSONhRG+PCsu7RNsr3qTqu+ULfl46vu/goXvEESCw42d2CAxbi6W9TuKU2P4jx/4tYnsNH37NhoAlS7i0WGdfj28DAty4lp+wtYAjLwT5wRhx3oCXGWkB3tkOnva+3ctPWXc7PtpGRlgGO2j8mKR/sBGWAUfppfmAudgFyIYdUh1VQm+MFd+fCQZDxF009Eye2IfWM2B/fLMk787eLwZqp1T3IuyRPBKMGaxK8GMi2RRGX/hgkq+uuuiuSs84fCDrgUxm702dMRb3kH1OMkH4YT5Lld9QtSAkcylio=`
 
 const accessKeyId  = AWS_ACCESS_KEY_ID
 const secretAccessKey = AWS_SECRET_ACCESS_KEY
@@ -26,13 +26,15 @@ const db = new AWS.DynamoDB.DocumentClient()
 
 const UserTable = 'users'
 const BookTable = 'books'
-const CommentTable = "comment"
+const CommentTable = 'comment'
+const ShelfTable = 'shelf'
 
 module.exports = {
     db,
     UserTable,
     BookTable,
-    CommentTable
+    CommentTable,
+    ShelfTable
 }
 
 

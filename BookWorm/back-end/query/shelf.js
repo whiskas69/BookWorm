@@ -1,9 +1,9 @@
-const { db, CommentTable } = require('../dynamo.js');
+const { db, ShelfTable } = require('../dynamo.js');
 
 // Create or Update users
-const createOrUpdatecomment = async (data = {}) =>{
+const createOrUpdateshelf = async (data = {}) =>{
     const params = {
-        TableName: CommentTable,
+        TableName: ShelfTable,
         Item: data
     }
     try{
@@ -18,9 +18,9 @@ const createOrUpdatecomment = async (data = {}) =>{
 }
 
 // Read all users
-const readAllcomment = async()=>{
+const readAllshelf = async()=>{
     const params = {
-        TableName: CommentTable
+        TableName: ShelfTable
     }
 
     try{
@@ -33,9 +33,9 @@ const readAllcomment = async()=>{
 }
 
 // Read Users by ID
-const getcommentById = async (value, key = 'id') => {
+const getshelfById = async (value, key = 'id') => {
     const params = {
-        TableName: CommentTable,
+        TableName: ShelfTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -49,9 +49,9 @@ const getcommentById = async (value, key = 'id') => {
 }
 
 // Delete User by ID
-const deletecommentById = async(value, key = 'BookId' ) => { 
+const deleteshelfById = async(value, key = 'BookId' ) => { 
     const params = {
-        TableName: CommentTable,
+        TableName: ShelfTable,
         Key: {
             [key]: parseInt(value)
         }
@@ -67,8 +67,8 @@ const deletecommentById = async(value, key = 'BookId' ) => {
 }
 
 module.exports = {
-    createOrUpdatecomment,
-    readAllcomment,
-    getcommentById,
-    deletecommentById
+    createOrUpdateshelf,
+    readAllshelf,
+    getshelfById,
+    deleteshelfById
 }
