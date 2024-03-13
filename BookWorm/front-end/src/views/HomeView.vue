@@ -21,14 +21,48 @@ import BoxBook from "../components/BoxBook.vue";
       </div>
 
       <div class="flex flex-row mt-5 justify-between">
-        <div class="px-10 py-7 rounded-lg bg-[#FF94C2]">Romance Shop now</div>
-        <div class="px-10 py-7 rounded-lg bg-[#DEBBF3]">LGBTQ+ Shop now</div>
-        <div class="px-10 py-7 rounded-lg bg-[#A2D8F2]">Fantasy Shop now</div>
+        <div class="px-10 py-7 rounded-lg bg-[#FF94C2]">
+          <router-link
+                  class="text-[16px] font-bold justify-end"
+                  to="/romance"
+                >
+          Romance Shop now
+          </router-link>
+          </div>
+          
+        <div class="px-10 py-7 rounded-lg bg-[#DEBBF3]">
+          <router-link
+                  class="text-[16px] font-bold justify-end"
+                  to="/lgbtq"
+                >
+          LGBTQ+ Shop now
+          </router-link>
+          </div>
+        <div class="px-10 py-7 rounded-lg bg-[#A2D8F2]">
+          <router-link
+                  class="text-[16px] font-bold justify-end"
+                  to="/fantasy"
+                >
+          Fantasy Shop now
+          </router-link>
+          </div>
         <div class="px-10 py-7 rounded-lg bg-[#E6DDB2]">
+          <router-link
+                  class="text-[16px] font-bold justify-end"
+                  to="/doc"
+                >
           Documentary Shop now
+          </router-link>
+          
         </div>
         <div class="px-10 py-7 rounded-lg bg-[#01304A] text-white">
+          <router-link
+                  class="text-[16px] font-bold justify-end"
+                  to="/mys"
+                >
           Mystery Shop now
+          </router-link>
+          
         </div>
       </div>
     </div>
@@ -36,9 +70,6 @@ import BoxBook from "../components/BoxBook.vue";
     <div class="w-full flex flex-col mt-10 px-20">
       <div class="flex flex-row">
         <label class="text-[28px] font-bold">Books</label>
-        <div class="flex items-end justify-end flex-auto">
-          <a href="" class="text-[16px] font-bold justify-end">All Books ></a>
-        </div>
       </div>
 
       <div class="flex flex-row mt-5 justify-between">
@@ -79,7 +110,7 @@ import BoxBook from "../components/BoxBook.vue";
                   class="text-black bg-yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                   :to="`/book/detail/${book.id}`"
                 >
-                  Free
+                  Detail
                 </router-link>
               </div>
             </div>
@@ -111,9 +142,11 @@ export default {
     },
     getBook() {
       console.log("getbooks!");
+      
+      
 
       axios
-        .get("http://3.93.61.199:3000/book", {
+        .get("http://54.159.109.208:3000/book", {
           params: {
             search: this.search,
           },

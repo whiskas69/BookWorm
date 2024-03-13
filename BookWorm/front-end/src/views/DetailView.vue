@@ -26,11 +26,14 @@
         </div>
 
         <div class="flex">
-          <button
-            class="flex mt-5 bg-steelblue border-0 py-3 px-6 focus:outline-none hover:bg-spiritmountain rounded-full"
-          >
-            Free
-          </button>
+          <router-link
+            class="text-black bg-yellow font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            :to="`/shelf`"
+            v-model="selectbook"
+            @click="myshelf"
+            >Free
+            
+          </router-link>
         </div>
 
         <div class="flex flex-row mt-5 w-[360px]">
@@ -65,6 +68,7 @@
           <textarea
             id="comment"
             rows="6"
+            v-model="commentInput"
             class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
             placeholder="Write a comment..."
             required
@@ -73,6 +77,7 @@
         </div>
         <button
           type="submit"
+           @click="comment"
           class="inline-flex items-center py-3 px-4 text-xs font-medium text-center text-white bg-steelblue rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
         >
           Post comment
@@ -81,6 +86,9 @@
       <hr class="mt-10">
       <div class="py-5">
         <label class="text-[24px] font-medium">ALL REVIEW</label>
+      <div>
+        
+      </div>
         <div class="py-5">
            <BoxComment />
         </div>
@@ -102,6 +110,8 @@ export default {
       cate: "",
       text: "",
       writer: "",
+      commentInput: "",
+      selectbook: []
     };
   },
   mounted() {
@@ -113,7 +123,7 @@ export default {
       const bookid = this.$route.params.id;
       console.log("bookid", bookid)
       
-      axios.get(`http://3.93.61.199:3000/book/${bookid}`)
+      axios.get(`http://54.159.109.208:3000/book/${bookid}`)
       .then((response) => {
         console.log("res", response.data.data)
         this.book = response.data.data
@@ -122,8 +132,69 @@ export default {
       .catch((error) => {
         this.error = error.response.data.message;
       });
+    },
+    
+    comment() {
+      
+      let userId = localStorage.getItem('userId');
+      let username = localStorage.getItem('username')
+      
+      const data ={
+        text : this.commentInput,
+        bookname : this.book.bookname,
+        username: username,
+        userID: userId
+      }
+      console.log("commentInput", data)
+      
+      axios.post("http://54.159.109.208:3000/createcomment", data)
+      .then(res => {
+        console.log('In commentbox')
+        this.responseData = res.data;
+        
+        this.commentInput = ""
+        console.log("wine", this.responseData)
+        
+        this.fetchComments()
+      })
+      .catch(err => {
+        console.error('error fetching data: ', err)
+      })
+    },
+    myshelf(){
+      console.log("in myshelf")
+      
+      let userId = localStorage.getItem('userId');
+      let username = localStorage.getItem('username')
+      
+      const data = {
+        id : this.book.id,
+        bookname : this.book.bookname,
+        writer : this.book.writer,
+        cate : this.book.cate,
+        img : this.book.bookimg,
+        userId : userId,
+        username : username
+      }
+      
+      console.log("data shelf", data)
+      
+      axios.post("http://54.159.109.208:3000/createshelf", data)
+      .then(res => {
+        console.log('In shlef')
+        this.responseData = res.data;
+        
+        console.log("wine", this.responseData)
+        
+        
+      })
+      .catch(err => {
+        console.error('error fetching data: ', err)
+      })
     }
-    }
+    
+  }
+  
 
 };
 </script>

@@ -1,33 +1,68 @@
 <template>
-  <article class="p-6 text-base bg-white border-solid border-2 border-black-600 rounded-lg dark:bg-gray-900">
-    <footer class="flex justify-between items-center mb-2">
-      <div class="flex items-center">
-        <p
-          class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold"
-        >
-          <img
+  <div  v-for="(comment, index) in comments" :key="index">
+    <article class="p-6 mb-10 text-base bg-white border-solid border-2 border-black-600 rounded-lg dark:bg-gray-900">
+      <div class="flex flex-row">
+        <img
             class="mr-2 w-6 h-6 rounded-full"
             src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
             alt="Michael Gough"
-          />Michael Gough
-        </p>
-        <p class="text-sm text-gray-600 dark:text-gray-400">
-          <time pubdate datetime="2022-02-08" title="February 8th, 2022"
-            >Feb. 8, 2022</time
+          />
+        <div class="flex items-center"  >
+          <p
+            class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold"
           >
-        </p>
+            {{comment.username}}
+          </p>
+          <!---- <p class="text-sm text-gray-600 dark:text-gray-400">
+            <time pubdate datetime="2022-02-08" title="February 8th, 2022"
+              >{{comment.bookname}}</time
+            >
+          </p>-->
+        </div>
       </div>
-    </footer>
-    <p class="text-gray-500 dark:text-gray-400">
-      Very straight-to-point article. Really worth time reading. Thank you! But
-      tools are just the instruments for the UX designers. The knowledge of the
-      design tools are as important as the creation of the design strategy.
-    </p>
+      
+      <div>
+        {{comment.text}}
+      </div>
+  
   </article>
+  </div>
+  
 </template>
 
 <script>
-export default {};
+import axios from 'axios';
+
+export default {
+  data(){
+    return{
+      comments: []
+      
+    }
+  },
+  created(){
+    this.fetchComments();
+  },
+  
+  
+  
+  methods: {
+    async fetchComments() {
+      console.log("getAllComment");
+      try {
+        const res = await axios.get("http://54.159.109.208:3000/comment");
+        this.comments = res.data.data;
+        console.log("allcom", res.data);
+        console.log("allcom01", res.data.data);
+      } catch (err) {
+        console.error('error fetching data: ', err);
+      }
+    }
+  }
+  
+  
+  
+};
 </script>
 
 <style></style>

@@ -4,7 +4,7 @@ import { createStore } from 'vuex';
 export default createStore({
   state: {
     loggedInUser: null,
-    loggedInUserId: null, // เพิ่ม state เก็บ ID ของผู้ใช้ที่ล็อกอิน
+    loggedInUserId: null, // เพิ่ม state เก็บ ID ของผู้ใช้ที่ล็อกอินอยู่
   },
   mutations: {
     setLoggedInUser(state, { user, userId }) {

@@ -76,7 +76,6 @@
 
 <script>
 import axios from 'axios';
-import { mapMutations } from 'vuex';
 
 export default {
   data() {
@@ -87,7 +86,6 @@ export default {
     };
   },
   methods: {
-    ...mapMutations('user', ['setLoggedInUser']),
     login() {
       
       console.log("In login")
@@ -96,12 +94,14 @@ export default {
         password: this.password,
       };
       
-      axios.post("http://3.93.61.199:3000/login", user)
+      axios.post("http://54.159.109.208:3000/login", user)
       .then((res) => {
         this.err = ""
-        console.log("res", res)
-        this.setLoggedInUser({ user: this.username, userId: this.id });
-        alert("You are already our mrmber!");
+        console.log("res", res.data.userId)
+        alert("You are already our member!");
+        localStorage.setItem("userId", res.data.userId)
+        localStorage.setItem("username", res.data.username)
+        
         this.$router.push({ path: "/" });
       })
       .catch((err) => {

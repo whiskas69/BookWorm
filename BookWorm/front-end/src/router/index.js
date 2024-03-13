@@ -14,7 +14,11 @@ import Writing from '../views/WritingView.vue'
 
 import Detail from '../views/DetailView.vue'
 import Upload from '../views/UploadView.vue'
-import Incategory from '../views/InCategoryView.vue'
+import Incategoryfantasy from '../views/InCategory.vue'
+import Incategoryromance from '../views/InCategoryView1.vue'
+import IncategoryLGBTQ from '../views/InCategoryView2.vue'
+import Incategorydoc from '../views/InCategoryView3.vue'
+import Incategorymys from '../views/InCategoryView4.vue'
 import Bestselling from '../views/BestsellingView.vue'
 import Catrgory from '../views/CategoryView.vue'
 
@@ -87,9 +91,29 @@ const router = createRouter({
       component: Upload
     },
     {
-      path: '/incategory',
-      name: 'incategory',
-      component: Incategory
+      path: '/fantasy',
+      name: 'fatasy',
+      component: Incategoryfantasy
+    },
+    {
+      path: '/romance',
+      name: 'romance',
+      component: Incategoryromance
+    },
+    {
+      path: '/lgbtq',
+      name: 'lgbtq',
+      component: IncategoryLGBTQ
+    },
+    {
+      path: '/doc',
+      name: 'doc',
+      component: Incategorydoc
+    },
+    {
+      path: '/mys',
+      name: 'mys',
+      component: Incategorymys
     },
     {
       path: '/bestselling',

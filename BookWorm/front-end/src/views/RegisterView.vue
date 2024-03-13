@@ -155,7 +155,7 @@ export default {
         };
 
         axios
-          .post("http://3.93.61.199:3000/register", data)
+          .post("http://54.159.109.208:3000/register", data)
           .then((res) => {
             this.err = "";
             console.log(res);

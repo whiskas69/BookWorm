@@ -14,7 +14,7 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     host: true,
-    orgin: "http://3.93.61.199:5173",
+    orgin: "http://54.159.109.208",
   },
   
   resolve: {

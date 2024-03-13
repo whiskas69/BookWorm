@@ -38,31 +38,23 @@
           </div>
 
           <!-- button -->
-          <div class="navbar-item has-dropdown is-hoverable" v-if="loggedInUser">
-              <a class="navbar-link">
-                <figure class="image is-24x24 my-auto">
-                  <img
-                    class="is-rounded"
-                    src="https://bulma.io/images/placeholders/128x128.png"
-                  />
-                </figure>
-                <!-- <span class="pl-3"
-                >{{ user.first_name }} {{ user.last_name }}</span
-              > -->
-                <span class="pl-3"
-                  >{{ user.username }}</span
-                >
-              </a>
-              <div class="navbar-dropdown">
-                <router-link to="/profile">
-                  <a class="navbar-item">Profile</a>
-                </router-link>
-                <!--  <a class="navbar-item" @click="logout">Log out</a>-->
-                <a class="navbar-item" @click="logout">Log out</a>
-              </div>
-            </div>
+          <div class="flex flex-row items-center" v-if="userId">
+            <button
+              type="button"
+              class="text-knitsweater bg-midnight font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+            >
+              <router-link to="/myprofile"> {{username}} </router-link>
+            </button>
+            <button
+              type="button"
+              class="text-knitsweater bg-midnight font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+              @click="signOut"
+            >
+              SignOut
+            </button>
+          </div>
           
-          <div class="flex flex-row items-center" v-if="!loggedInUser">
+          <div class="flex flex-row items-center" v-if="!userId">
             <button
               type="button"
               class="text-knitsweater bg-midnight font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
@@ -102,22 +94,19 @@
   </div>
 </template>
 
-<script>
-import { mapState } from 'vuex';
-
-export default {
-  computed: {
-    ...mapState('user', ['loggedInUser', 'loggedInUserId']),
-  },
-  logout() {
-    window.location.reload();
-      // this.$router.push({ name: 'HomePage' });
-    },
-};
-</script>
-
 <script setup>
 import { RouterView } from "vue-router";
+
+let userId = localStorage.getItem('userId');
+let username = localStorage.getItem('username');
+
+const signOut = () => {
+  // Clear localStorage
+  localStorage.clear();
+      window.location.reload();
+      // this.$router.push({ name: 'HomePage' });
+    };
+  
 </script>
 
 <style lang="scss" scoped></style>
